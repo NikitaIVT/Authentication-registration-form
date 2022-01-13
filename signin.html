@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Авторизация</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="check_errors();">
+	<div class="main">
+		<h1 class="form-title">Авторизация</h1>
+		<div class="alert alert-danger" id="wrong-data">Неверный email или пароль!</div>
+		<div class="alert alert-check-email" id="check-email">Для окончания регистрации перейдите по ссылке, отправленной на почту.</div>
+		<div class="alert alert-validation" id="msg-validation">Вы успешно подтвердили почту!</div>
+		<div class="alert alert-change-pswd" id="msg-change-pswd">Вы успешно сменили пароль!</div>
+		<div class="alert alert-change-pswd-mail" id="msg-change-pswd-mail">Для смены пароля перейдите по ссылке, отправленной на почту.</div>
+		<form id="authorithation-block" action="scripts/signin.php" method="post">
+			<div class="form-block">
+				<div class="required">
+					<label class="" for="signin-email">Email</label><br>
+					<input id="signin-email" type="email" name="email" required="">
+				</div>	
+				<div class="required">
+					<label class="" for="signin-password">Пароль</label><br>
+					<input id="signin-password" type="password" name="password" required="">
+				</div>
+			</div>
+			<div class="link-and-button">
+				<a href="recovery.html">Забыли пароль?</a>
+				<button type="submit" class="btn">Войти</button>
+			</div>
+		</form>
+		<div class="small-link-text">
+			<a href="registration.html">Зарегестрироваться</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function check_errors() {
+			let params = (new URL(document.location)).searchParams;
+  	  let error = params.get("error");
+  	  if (error == 1) {
+  	  	document.getElementById('wrong-data').style.display = 'block';
+  	  }
+  	  let msg = params.get("msg");
+  	  if (msg == 0) {
+  	  	document.getElementById('check-email').style.display = 'block';
+  	  } else if (msg == 1) {
+  	  	document.getElementById('msg-validation').style.display = 'block';
+  	  }
+  	    else if (msg == 2) {
+  	  	document.getElementById('msg-change-pswd').style.display = 'block';
+  	  }
+  	  else if (msg == 3) {
+  	  	document.getElementById('msg-change-pswd-mail').style.display = 'block';
+  	  }
+		}
+	</script>
+</body>
+</html>

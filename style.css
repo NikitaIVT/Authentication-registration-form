@@ -1,0 +1,79 @@
+ body {
+	color: #40403b;
+	line-height: 1;
+	font: 14px/20px PT Sans, sans-serif;
+    height: 100%;
+}
+h1 {
+	font-family: 'PT Sans';
+    font-weight: bold !important;
+    font-size: 42px;
+    font-family: "proxima_nova_semibold";
+    margin-bottom: 0.5em;
+    line-height: 1.1;
+}
+input {
+	height: 20px;
+	border: 1px solid #ccc;
+}
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+a:link {
+	color: #2085e3;
+}
+a:visited {
+	color: #2085e3;	
+}
+#autorithation-block {
+	margin-top: 35px;
+}
+.main {
+	padding: 0 0 0 10px;
+}
+.form-title {
+	margin-bottom: 0.25rem !important;
+}
+.required {
+	margin: 0 0 10px 0;
+}
+.btn {
+	background-color: #17c0e5;
+	height: 30px;
+	color: white;
+	border: none;
+}
+.alert-danger {
+	background: #fae3e5;
+    color: #dc3545;
+    display: none;
+}
+.alert-check-email {
+	background: #20e37b;
+	color: #006139;
+	display: none;
+}
+.alert-validation {
+	background: #20e37b;
+	color: #006139;
+	display: none;
+}
+.alert-change-pswd {
+	background: #20e37b;
+	color: #006139;
+	display: none;
+}
+.alert-change-pswd-mail {
+	background: #20e37b;
+	color: #006139;
+	display: none;
+}
+.alert {
+	position: relative;
+	font-size: 0.85em;
+    margin: 15px 0 15px 0;
+    padding: 12px 12px;
+    border-radius: 4px;
+    display: none;
+}

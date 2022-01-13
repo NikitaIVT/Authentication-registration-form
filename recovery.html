@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Восстановление</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="main">
+  	<h1 class="form-title">Восстановление почты</h1>
+  	<form id="authorization-block" action="scripts/recovery-mail.php" method="post">
+  		<div class="required">
+				<label class="" for="email">Введите Email</label><br>
+				<input id="email" type="email" name="email" required>
+			</div>
+			<div class="button">
+				<button type="submit" class="btn">Восстановить</button>
+			</div>
+  	</form>
+  </div>
+</body>
+</html>

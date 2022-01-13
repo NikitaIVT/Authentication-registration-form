@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Регистрация</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="check_errors();">
+	<div class="main">
+		<h1 class="form-title">Регистрация</h1>
+		<div class="alert alert-danger" id="wrong-data">Данная почта уже занята!</div>
+		<form id="authorithation-block" action="scripts/registration.php" method="post">
+			<div class="form-block">
+				<div class="required">
+					<label class="" for="registration-fullname">Фамилия</label><br>
+					<input id="registration-fullname" type="text" name="fullname" pattern="[А-Яа-яЁё]{2,15}" placeholder="Иванов" required>
+				</div>
+				<div class="required">
+					<label class="" for="registration-name">Имя</label><br>
+					<input id="registration-name" type="text" name="name" pattern="[А-Яа-яЁё]{2,15}" placeholder="Иван" required>
+				</div>
+				<div class="required">
+					<label class="" for="password">Пароль</label><br>
+					<input id="password" type="password" name="password" placeholder="6+ латинских букв или цифр" pattern="[0-9A-Za-z]{6, 15}" required>
+					<label><input type="checkbox" class="password-checkbox" onclick="change_password_type();"> Показать пароль</label>
+				</div>
+				<div class="required">
+					<label class="" for="email">Email</label><br>
+					<input id="email" type="email" name="email" required>
+				</div>
+				<div class="required">
+					<label class="date-of-birth" for="registration-date-of-birth">Дата рождения</label><br>
+					<input id="registration-date-of-birth" type="date" name="date-of-birth" placeholder="ДД.ММ.ГГГГ" required>
+				</div>
+			<div class="link-and-button">
+				<a href="recovery.html">Забыли пароль?</a>
+				<button type="submit" class="btn">Зарегестрироваться</button>
+			</div>
+		</form>
+		<div class="small-link-text">
+			<a href="registration.html">Зарегестрироваться</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function change_password_type() {
+			let elem = document.getElementById('password');
+			attribute = elem.getAttribute('type');
+			if (attribute == 'password') {
+				elem.setAttribute('type', 'text');
+			} else {
+				elem.setAttribute('type', 'password');
+			}
+	    }
+	  function check_errors() {
+			let params = (new URL(document.location)).searchParams;
+  	  let error = params.get("error");
+  	  if (error == 1) {
+  	  	 document.getElementById('wrong-data').style.display = 'block';
+  	  }
+		}
+	</script>
+</body>
+</html>
